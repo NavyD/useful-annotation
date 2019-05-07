@@ -5,7 +5,7 @@
 
 	<groupId>cn.navyd</groupId>
 	<artifactId>useful-annotation</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>useful-annotation</name>

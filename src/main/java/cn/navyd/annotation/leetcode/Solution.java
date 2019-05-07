@@ -55,10 +55,18 @@ public @interface Solution {
   int runtime() default -1;
   
   /**
+   * @deprecated {@link #runtimeBeatRate()}
    * 运行时间超过的百分比
    * @return
    */
+  @Deprecated
   double runtimeBeats() default -1;
+  
+  /**
+   * 运行时间击败率
+   * @return
+   */
+  double runtimeBeatRate() default -1;
   
   /**
    * 使用内存。单位 MB。默认值表示未定义
@@ -67,10 +75,18 @@ public @interface Solution {
   double memory() default -1;
   
   /**
+   * @deprecated {@link #memoryBeatRate()}
    * 内存超过百分比
    * @return
    */
+  @Deprecated
   double memoryBeats() default -1;
+  
+  /**
+   * 内存击败比率
+   * @return
+   */
+  double memoryBeatRate() default -1;
   
   /**
    * 解决方案提供的时间。格式：{@linkplain java.time.format.DateTimeFormatter#ISO_LOCAL_DATE yyyy-MM-dd}
