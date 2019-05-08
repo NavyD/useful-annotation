@@ -39,7 +39,7 @@ public @interface Problem {
   String url();
   
   /**
-   * 标签
+   * 标签。匹配leetcode的tag
    * @return
    */
   Tag[] tags();
@@ -57,14 +57,15 @@ public @interface Problem {
   Difficulty difficulty();
   
   /**
-   * 解决的次数
+   * 该问题解决的次数，即几刷，默认为1刷
    * @return
    */
-  byte resolvedCount();
+  byte resolvedTimes() default 1;
   
   public static enum Tag {
     NONE,
     SORT,
+    HEAP,
     ;
   }
   
