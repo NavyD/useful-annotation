@@ -91,6 +91,12 @@ public @interface Solution {
    * @return
    */
   String[] referenceUrls() default "";
+  
+  /**
+   * 提交结果页面url
+   * @return
+   */
+  String submissionUrl() default "";
 
   public static enum Status {
     /**
