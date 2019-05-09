@@ -93,7 +93,8 @@ public @interface Solution {
   String[] referenceUrls() default "";
   
   /**
-   * 提交结果页面url
+   * 提交结果页面url。
+   * <p>注意：该功能是关联用户的，需要leetcode 用户登录
    * @return
    */
   String submissionUrl() default "";
