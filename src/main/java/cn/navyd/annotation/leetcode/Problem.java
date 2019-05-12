@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * 表示这是一个算法问题定义class
  * <p>规则
  * <ol>
- * <li>仅能被定义在interface, abstract class
+ * <li>仅能被定义在interface
  * </ol>
  * @see Solution
  * @author navyd
@@ -65,6 +65,7 @@ public @interface Problem {
   public static enum Tag {
     NONE,
     SORT,
+    SORT_BUCKET,
     HEAP,
     ;
   }
