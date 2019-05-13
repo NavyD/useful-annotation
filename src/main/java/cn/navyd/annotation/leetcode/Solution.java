@@ -26,13 +26,8 @@ import cn.navyd.annotation.leetcode.Problem.Tag;
 public @interface Solution {
   
   /**
-   * 提交的作者名称
-   * @return
-   */
-  String author() default "";
-  
-  /**
    * 该解法所用的具体方法类型，如sort,heap。类似于{@link Problem#tags()}，只是属于solution特有的tag，如不指定则使用{@link Problem#tags()}
+   * <p>可以使用非标准的{@link Tag}
    * @return
    */
   Tag[] tags() default Tag.NONE;
@@ -41,19 +36,29 @@ public @interface Solution {
    * 时间复杂度。默认值表示未定义
    * @return
    */
-  Complexity timeComplexity() default Complexity.NONE;
+  Complexity timeComplexity();
   
   /**
    * 空间复杂度。默认值表示未定义
    * @return
    */
-  Complexity spaceComplexity() default Complexity.NONE;
+  Complexity spaceComplexity();
   
   /**
    * 参考的url地址
+   * @see {@link Author}
    * @return
    */
+  @Deprecated
   String[] referenceUrls() default "";
+  
+  /**
+   * @see {@link Author}
+   * 提交的作者名称
+   * @return
+   */
+  @Deprecated
+  String author() default "";
 
   /**
    * 表示该solution解决的问题class定义。默认从注解class中提取super class 或 super interface的class
@@ -131,10 +136,6 @@ public @interface Solution {
    *
    */
   public static enum Complexity {
-    /**
-     * 表示未设置复杂度
-     */
-    NONE("none", -1),
     O_1("O(1)", 1),
     O_LOG_K("O(log K)", 5),
     O_LOG_N("O(log N)", 10),
