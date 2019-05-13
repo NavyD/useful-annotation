@@ -24,6 +24,7 @@ public @interface Problem {
    * @see #title()
    * @return
    */
+  @Deprecated
   String value() default "";
   
   /**
@@ -62,12 +63,36 @@ public @interface Problem {
    */
   byte resolvedTimes() default 1;
   
+  /**
+   * 表示problem和solution关联的标签。
+   * <p>该enum定义了标准的leetcode标签和扩展的tag
+   * @author navyd
+   *
+   */
   public static enum Tag {
-    NONE,
-    SORT,
-    SORT_BUCKET,
-    HEAP,
+    NONE(null),
+    SORT(null),
+    SORT_BUCKET(SORT),
+    HEAP(null),
     ;
+    
+    private final Tag parent;
+    
+    Tag(Tag parent) {
+      this.parent = parent;
+    }
+    
+    public Tag getParent() {
+      return parent;
+    }
+    
+    /**
+     * 如果是标准的leetcode tag则返回true
+     * @return
+     */
+    public boolean isStandard() {
+      return parent == null && this != Tag.NONE;
+    }
   }
   
   public static enum Difficulty {
