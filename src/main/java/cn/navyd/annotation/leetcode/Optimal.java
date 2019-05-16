@@ -16,4 +16,14 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 public @interface Optimal {
 
+  /**
+   * 表示最优的是时间 还是空间，或两者都是。默认时间 空间 都是最优的
+   * @return
+   */
+  Type[] value() default {Type.TIME, Type.SPACE};
+  
+  public static enum Type {
+    SPACE, 
+    TIME;
+  }
 }
