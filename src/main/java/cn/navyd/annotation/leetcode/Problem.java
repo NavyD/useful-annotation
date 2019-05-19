@@ -61,6 +61,7 @@ public @interface Problem {
    * 该问题解决的次数，即几刷，默认为1刷
    * @return
    */
+  @Deprecated
   byte resolvedTimes() default 1;
   
   /**
@@ -76,6 +77,7 @@ public @interface Problem {
     SORT_COUNTING(SORT),
     SORT_QUICK_SELECT(SORT),
     HEAP(null),
+    LINKED_LIST(null),
     ;
     
     private final Tag parent;
