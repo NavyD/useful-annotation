@@ -40,7 +40,7 @@ public @interface Problem {
   String url();
   
   /**
-   * 标签。匹配leetcode的tag
+   * 标签。匹配leetcode的tag，只允许标准的tag
    * @return
    */
   Tag[] tags();
@@ -73,6 +73,8 @@ public @interface Problem {
     NONE(null),
     SORT(null),
     SORT_BUCKET(SORT),
+    SORT_COUNTING(SORT),
+    SORT_QUICK_SELECT(SORT),
     HEAP(null),
     ;
     
