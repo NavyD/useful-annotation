@@ -145,6 +145,7 @@ public @interface Solution {
     O_N_LOG_K("O(N log K)", 25),
     O_N_LOG_N("O(N log N)", 30),
     O_N_K("O(N * K)", 35),
+    O_K_N_LOG_N("O(KN log N)", 36),
     O_N_POW_2("O(N^2)", 40),
     ;
     private final String description;
