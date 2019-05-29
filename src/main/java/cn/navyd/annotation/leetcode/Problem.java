@@ -21,13 +21,6 @@ import java.lang.annotation.Target;
 @Documented
 public @interface Problem {
   /**
-   * @see #title()
-   * @return
-   */
-  @Deprecated
-  String value() default "";
-  
-  /**
    * 问题的标题，默认为class的名称
    * @return
    */
@@ -41,6 +34,7 @@ public @interface Problem {
   
   /**
    * 标签。匹配leetcode的tag，只允许标准的tag
+   * <p>该标签将作为不同包的problem链接使用
    * @return
    */
   Tag[] tags();
@@ -56,13 +50,6 @@ public @interface Problem {
    * @return
    */
   Difficulty difficulty();
-  
-  /**
-   * 该问题解决的次数，即几刷，默认为1刷
-   * @return
-   */
-  @Deprecated
-  byte resolvedTimes() default 1;
   
   /**
    * 表示problem和solution关联的标签。

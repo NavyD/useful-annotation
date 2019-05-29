@@ -13,8 +13,10 @@ import java.lang.annotation.Target;
  * 所以只能在linked list包上注解LinkedProblems关联的problem。
  * <p>如果链接到多个包，应该使用多个注解分离，每个包一个
  * @author navyd
+ * @deprecated 可以通过{@link Problem#tags()}解决该问题
  *
  */
+@Deprecated
 @Repeatable(LinkedProblems.class)
 @Documented
 @Retention(RUNTIME)

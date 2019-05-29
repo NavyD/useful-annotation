@@ -30,6 +30,4 @@ public @interface Author {
    * @return
    */
   String[] referenceUrls() default "";
-  
-  String[] comments() default "";
 }
